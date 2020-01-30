@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ScaleChooserForm = () => {
+const ScaleChooserForm = ({scale}) => {
 
     const initialScale = {
         key: "C",
@@ -51,10 +51,10 @@ const ScaleChooserForm = () => {
                                         <label><input name="key" type="radio" value="B" checked={userScale.key === "B"} onChange={handleChange}/>B</label>
                                     </div>
                                     <div className="formKeyRadioOption">
-                                        <label><input name="key" type="radio" value="C#" checked={userScale.key === "C#"} onChange={handleChange}/>C#</label>
+                                        <label><input name="key" type="radio" value="C♯" checked={userScale.key === "C♯"} onChange={handleChange}/>C♯</label>
                                     </div>
                                     <div className="formKeyRadioOption">
-                                        <label><input name="key" type="radio" value="F#" checked={userScale.key === "F#"} onChange={handleChange}/>F#</label>
+                                        <label><input name="key" type="radio" value="F♯" checked={userScale.key === "F♯"} onChange={handleChange}/>F♯</label>
                                     </div>
                                 </div>
 
@@ -63,22 +63,22 @@ const ScaleChooserForm = () => {
                                         <label><input name="key" type="radio" value="F" checked={userScale.key === "F"} onChange={handleChange}/>F</label>
                                     </div>
                                     <div className="formKeyRadioOption">
-                                        <label><input name="key" type="radio" value="Bb" checked={userScale.key === "Bb"} onChange={handleChange}/>Bb</label>
+                                        <label><input name="key" type="radio" value="B♭" checked={userScale.key === "B♭"} onChange={handleChange}/>B♭</label>
                                     </div>
                                     <div className="formKeyRadioOption">
-                                        <label><input name="key" type="radio" value="Eb" checked={userScale.key === "Eb"} onChange={handleChange}/>Eb</label>
+                                        <label><input name="key" type="radio" value="E♭" checked={userScale.key === "E♭"} onChange={handleChange}/>E♭</label>
                                     </div>
                                     <div className="formKeyRadioOption">
-                                        <label><input name="key" type="radio" value="Ab" checked={userScale.key === "Ab"} onChange={handleChange}/>Ab</label>
+                                        <label><input name="key" type="radio" value="A♭" checked={userScale.key === "A♭"} onChange={handleChange}/>A♭</label>
                                     </div>
                                     <div className="formKeyRadioOption">
-                                        <label><input name="key" type="radio" value="Db" checked={userScale.key === "Db"} onChange={handleChange}/>Db</label>
+                                        <label><input name="key" type="radio" value="D♭" checked={userScale.key === "D♭"} onChange={handleChange}/>D♭</label>
                                     </div>
                                     <div className="formKeyRadioOption">
-                                        <label><input name="key" type="radio" value="Gb" checked={userScale.key === "Gb"} onChange={handleChange}/>Gb</label>
+                                        <label><input name="key" type="radio" value="G♭" checked={userScale.key === "G♭"} onChange={handleChange}/>G♭</label>
                                     </div>
                                     <div className="formKeyRadioOption">
-                                        <label><input name="key" type="radio" value="Cb" checked={userScale.key === "Cb"} onChange={handleChange}/>Cb</label>
+                                        <label><input name="key" type="radio" value="C♭" checked={userScale.key === "C♭"} onChange={handleChange}/>C♭</label>
                                     </div>
                                 </div>
                                 
@@ -114,8 +114,10 @@ const ScaleChooserForm = () => {
                         </div>
                     </div>
                 </div>
+
+                <h2 className="chosenScale">{userScale.key} {userScale.tonality} scale in {userScale.clef} clef</h2>
                 
-                <button name="submit" onClick={handleSubmit}>Display Scale</button>
+                <button name="submit" onClick={handleSubmit}>Display scale</button>
             </form>
         </div>
     )
