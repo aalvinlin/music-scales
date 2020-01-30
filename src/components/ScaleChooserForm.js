@@ -1,14 +1,6 @@
 import React, { useState } from "react";
 
-const ScaleChooserForm = ({scale}) => {
-
-    const initialScale = {
-        key: "C",
-        tonality: "major",
-        clef: "treble"
-    }
-    
-    const [userScale, setUserScale] = useState(initialScale);
+const ScaleChooserForm = ({userScale, setUserScale}) => {
 
     const handleChange = (event) => {
         setUserScale({...userScale, [event.target.name]: event.target.value});
