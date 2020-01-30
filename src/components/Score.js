@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-const Score = () => {
+const Score = ({ scaleNotes }) => {
 
     return (
         <div className="score">
-            Score
+            { scaleNotes.map((note, id) => <span key={"note" + id}>{note}</span>) }
         </div>
     )
 }

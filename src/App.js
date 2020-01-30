@@ -13,12 +13,13 @@ const App = () => {
   }
 
   const [userScale, setUserScale] = useState(initialScale);
+  const [scaleNotes, setScaleNotes] = useState([]);
 
   return (
     <div className="content">
       <h1>Music scales</h1>
-      <ScaleChooserForm userScale={userScale} setUserScale={setUserScale} />
-      <Score />
+      <ScaleChooserForm userScale={userScale} setUserScale={setUserScale} scaleNotes={scaleNotes} setScaleNotes={setScaleNotes} />
+      <Score scaleNotes={scaleNotes} />
     </div>
   )
 };

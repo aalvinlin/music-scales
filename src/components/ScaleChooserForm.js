@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { getScaleNotes } from "./utils/getScaleNotes";
 
-const ScaleChooserForm = ({userScale, setUserScale}) => {
+const ScaleChooserForm = ({userScale, setUserScale, scaleNotes, setScaleNotes }) => {
 
     const handleChange = (event) => {
         setUserScale({...userScale, [event.target.name]: event.target.value});
@@ -9,6 +10,7 @@ const ScaleChooserForm = ({userScale, setUserScale}) => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
+        setScaleNotes(getScaleNotes(userScale));
     }
 
     return (
