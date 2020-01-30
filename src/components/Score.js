@@ -4,7 +4,11 @@ const Score = ({ scaleNotes }) => {
 
     return (
         <div className="score">
-            { scaleNotes.map((note, id) => <span key={"note" + id}>{note}</span>) }
+            <div className="scaleLetters">
+                {
+                    scaleNotes.map((noteData, id) => <div key={"note" + id} className="scaleLetter">{noteData.note}</div>)
+                }
+            </div>
         </div>
     )
 }

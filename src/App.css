@@ -82,3 +82,21 @@ button:hover {
     /* width: 100%;
     margin: 0 auto; */
 }
+
+.scaleLetters{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.scaleLetter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 14%;
+    margin: 10rem auto;
+
+    font-size: 3rem;
+    font-weight: bold;
+}
