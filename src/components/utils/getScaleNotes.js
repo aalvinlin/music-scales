@@ -26,7 +26,7 @@ export const getScaleNotes = ({key, tonality, clef}) => {
     if (key.length === 2)
         {
             startingNote = key[0];
-            currentNoteAccidental = key[1];
+            currentNoteAccidental = accidentalsToHalfSteps[key[1]];
         }
 
     console.log(startingNote)
@@ -51,14 +51,19 @@ export const getScaleNotes = ({key, tonality, clef}) => {
             let noteObject = {
                 note: idsToNotes[currentNoteId],
                 octave: octave,
-                accidental: currentNoteAccidental,
+                accidentalValue: currentNoteAccidental,
+                accidental: halfStepsToAccidentals[currentNoteAccidental],
                 duration: 1
             }
 
             scaleNotes.push(noteObject);
 
             // calculate accidental for next note
-            currentNoteAccidental
+            let currentHalfSteps = intervalToNextNoteNatural[idsToNotes[currentNoteId]] - currentNoteAccidental;
+            let halfStepsNeededForScale = scaleIntervals[tonality][i];
+            
+            let halfStepsNeeded = halfStepsNeededForScale - currentHalfSteps;
+            currentNoteAccidental = halfStepsNeeded;
 
         }
 
