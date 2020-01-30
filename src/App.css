@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+    font-family: Candara;
+    color: rgb(16, 8, 0, 0.7);
+}
+
+body {
+    background-image: url("./images/parchment.jpg");
+    background-size: 100% auto;
+}
+
+.content {
+    width: 90%;
+    margin: 0 auto;
+}
+
+input[type="radio"] {
+    /* display: none; */
+}
+
+/* container holding both radio option descrition and radio buttons */
+.formKeyDiv, .formTonalityDiv, .formClefDiv {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.formKeyOptions, .formTonalityOptions, .formClefOptions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.keySignatureOptions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* divs to hold each of the 7 options for sharps or flats */
+.keySignatureOptionsSharps, .keySignatureOptionsFlats {
+    display: flex;
+    justify-content: space-between;
+}
+
+.keySignatureOptionsSharps div, .keySignatureOptionsFlats div {
+    width: 14%;
+}
+
+label, button {
+    font-size: 2rem;
+    margin: 0 1rem;
+}
+
+button {
+    background-color: transparent;
+    border: 2px solid #663333;
+    border-right: none;
+    border-left: none;
+    cursor: pointer;
+
+    display: block;
+    margin: 0 auto;
+}
+
+button:hover {
+    color: #663333;
+    border: 2px solid #663333;
+}
